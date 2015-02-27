@@ -1,1 +1,4 @@
-# html_game
+Territory Game
+=====
+
+Game Project
