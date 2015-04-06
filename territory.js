@@ -1,3 +1,4 @@
+//test
 function color_sel(colr,colorPicker)
 {
 	var colr = "Blue"
