@@ -1,4 +1,0 @@
-Territory Game
-=====
-
-Game Project

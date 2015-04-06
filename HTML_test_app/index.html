@@ -1,0 +1,87 @@
+﻿<!---- Territory Control Game-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Total Territory Takeover</title>
+
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="app.js"></script>
+</head>
+  <body>
+<!--<body onload="onload()">
+    -->
+    <h1><span>Total Territory Takeover</span></h1>
+    <p>
+
+        Choose Player 1's color:
+        <select id="p1_colorPicker">
+            <option selected="selected" value="r">Red</option>
+            <option value="b">Blue</option>
+            <option value="g">Green</option>
+            <option value="p">Pink</option>
+        </select>
+
+        <!--button type="button" onclick='p1_colorPicker.disabled="disabled"'>Ok</!--button--><br>
+        Choose Player 2's color:
+        <select id="p2_colorPicker">
+            <option value="r">Red</option>
+            <option selected="selected" value="b">Blue</option>
+            <option value="g">Green</option>
+            <option value="p">Pink</option>
+        </select>
+        <br>
+        <button id="colorButton" class="sameColor" type="button" onclick='p1_colorPicker.disabled = "disabled";p2_colorPicker.disabled="disabled"'>Ok</button>
+    </p>
+    <p id="sameColorMesg" class="sameColorMesg"> Hey now!  You can't both be the same color, try again.</p>
+    
+      <p>
+          <strong>Rules:</strong>
+
+          <br>You get 1 action point(AP) per 2 squares in your largest continuous territory.
+          <br>It costs 1 AP to claim a unclaimed territory.
+          <br>It costs 2 AP to claim an enemy territory.
+          <br>You may only claim land adjacent to your territory.
+          <br>Control 75% of the map to win!
+          <br><i>Note: Unused points carry over to the next round and you will receive a minimum of 3 AP per turn.</i>
+      </p>
+
+      <table class="board">
+          <tr>
+              <th id="p1_name">You</th>
+              <th id="p1_AP">AP: 5</th>
+              <th id="p1_terr">Your land: 0</th>
+              <th id="p1_terrToWin">To win: 75</th>
+              <th id="whoTurn_a">Red's</th>
+              <th id="whoTurn_b">Turn</th>
+              <th id="p2_name">The foe</th>
+              <th id="p2_AP">Evil AP: 5</th>
+              <th id="p2_terr">Bad land: 0</th>
+              <th id="p2_terrToWin">Foe to win: 75</th>
+          </tr>
+      </table>
+      <!--Define my canvas to draw the game in-->
+      <canvas id="canvas" width="500" height="500">
+      <!--canvas id="myCanvas" width="500" height="500"-->
+              Your browser does not support the HTML5 canvas tag.
+          </canvas>
+
+      <p></p>
+<!--3/21      <button type="button" value=5 class="turn" onclick='endTurn("value")'>End Turn</button>
+    -->
+      <button type="button" class="turn">End Turn</button>
+      <!--3/21-->
+      <p id="winning" class="winning"><strong> You win! </strong><br></p><br>
+      <span id="playAgainMesg" class="playAgain">Would you like to play again?</span>
+      <button id="yes" class="playAgain" type="button" onclick="">Yes</button>
+      <button id="no" class="playAgain" type="button" onclick="">No</button>
+
+      <p></p>
+
+          <div id="content"></div>
+
+</body>
+</html>
+
+
