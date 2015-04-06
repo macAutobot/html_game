@@ -1,0 +1,25 @@
+table.board { 
+    display: table;
+    border-collapse: collapse;
+	table-layout:fixed;
+	width:200px;
+	height:50px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.75);
+}
+th, td { 
+	display:table-columns;
+	padding="5"
+	width:100px;
+	height:50px;
+
+	border-color: gray;
+	border: 1px solid gray;
+}
+tr {
+	display:table-row;
+	width:200px;
+	height:50px;
+	border-color: gray;
+	border: 1px solid gray;
+	background-color:#C6D0D5;
+}
