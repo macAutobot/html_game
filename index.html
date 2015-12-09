@@ -4,36 +4,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+	<META HTTP-EQUIV="refresh" CONTENT="300">
     <title>Total Territory Takeover</title>
 
     <link rel="stylesheet" href="app.css" type="text/css" />
     <script src="app.js"></script>
 </head>
   <body>
-<!--<body onload="onload()">
-    -->
+	
     <h1><span>Total Territory Takeover</span></h1>
-    <p>
 
-        Choose Player 1's color:
+	<div id="AIOption">
+		<select id ="vsAI">
+			<option value="solo">AI</option>
+			<option value="notsolo">again other player(s)</option>
+		</select>
+		<button type="button" onclick="vsselect()" >Ok</button>
+	<br>
+	</div>
+	<p id="player_one" style="visibility:hidden">
+        Choose your color:
         <select id="p1_colorPicker">
-            <option selected="selected" value="r">Red</option>
+            <option selected="selected" value="">Red</option>
             <option value="b">Blue</option>
             <option value="g">Green</option>
             <option value="p">Pink</option>
         </select>
-
-        <!--button type="button" onclick='p1_colorPicker.disabled="disabled"'>Ok</!--button--><br>
+		<button id="colorButton1" type="button" onclick='setcolor()'>Ok</button>
+	</p>
+	<p id="player_two" style="visibility:hidden">
         Choose Player 2's color:
         <select id="p2_colorPicker">
             <option value="r">Red</option>
-            <option selected="selected" value="b">Blue</option>
+            <option selected="selected" value="">Blue</option>
             <option value="g">Green</option>
             <option value="p">Pink</option>
         </select>
-        <br>
-        <button id="colorButton" class="sameColor" type="button" onclick='p1_colorPicker.disabled = "disabled";p2_colorPicker.disabled="disabled"'>Ok</button>
+        <button id="colorButton2" class="sameColor" type="button" onclick='setcolor()'>Ok</button>
     </p>
+	<div id="gamestart" style="visibility:hidden">
+		<button id="strtgmbtn" type="button" onclick="startgame()">Start Game</button>
+	</div>
+	
     <p id="sameColorMesg" class="sameColorMesg"> Hey now!  You can't both be the same color, try again.</p>
     
       <p>
@@ -46,32 +58,38 @@
           <br>Control 75% of the map to win!
           <br><i>Note: Unused points carry over to the next round and you will receive a minimum of 3 AP per turn.</i>
       </p>
-
+	  
+	  <table class="msboard" id="nomore">
+	  <tr>
+	  <td>
       <table class="board">
           <tr>
-              <th id="p1_name">You</th>
-              <th id="p1_AP">AP: 5</th>
-              <th id="p1_terr">Your land: 0</th>
-              <th id="p1_terrToWin">To win: 75</th>
-              <th id="whoTurn_a">Red's</th>
-              <th id="whoTurn_b">Turn</th>
-              <th id="p2_name">The foe</th>
-              <th id="p2_AP">Evil AP: 5</th>
-              <th id="p2_terr">Bad land: 0</th>
-              <th id="p2_terrToWin">Foe to win: 75</th>
+              <th id="p1_name" style="width:100%">You</th>
+              <th id="p1_AP" style="width:100%">AP: 5</th>
+              <th id="p1_terr" style="width:100%" >Your land: 0</th>
+              <th id="p1_terrToWin" style="width:100%">To win: 75</th>
+              <th id="whoTurn_a" style="width:100%">Red's</th>
+              <th id="whoTurn_b" style="width:100%">Turn</th>
+              <th id="p2_name" style="width:100%">The foe</th>
+              <th id="p2_AP" style="width:100%">Evil AP: 5</th>
+              <th id="p2_terr" style="width:100%">Bad land: 0</th>
+              <th id="p2_terrToWin" style="width:100%">Foe to win: 75</th>
           </tr>
       </table>
-      <!--Define my canvas to draw the game in-->
-      <canvas id="canvas" width="500" height="500">
-      <!--canvas id="myCanvas" width="500" height="500"-->
+	  </td>
+	  </tr>
+	  <tr>
+	  <td>
+	        <canvas id="canvas" width="500" height="500">
               Your browser does not support the HTML5 canvas tag.
           </canvas>
+		 </td>
+	</tr>
+	</table>
+	  
 
       <p></p>
-<!--3/21      <button type="button" value=5 class="turn" onclick='endTurn("value")'>End Turn</button>
-    -->
       <button type="button" class="turn">End Turn</button>
-      <!--3/21-->
       <p id="winning" class="winning"><strong> You win! </strong><br></p><br>
       <span id="playAgainMesg" class="playAgain">Would you like to play again?</span>
       <button id="yes" class="playAgain" type="button" onclick="">Yes</button>
